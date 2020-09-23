@@ -4,6 +4,8 @@
     --color-secondary: #20232a;
 }
 
+/* ------ Widgets ------ */
+
 * {
     color:  var(--color-primary);
     margin: 0;
@@ -14,7 +16,9 @@ body {
     background-color: var(--color-secondary);
 }
 
-button, 
+/* Components - Buttons and Inputs */
+
+.btn-primary, 
 input {
     background-color: var(--color-secondary);
     border: 1px solid var(--color-primary);
@@ -39,14 +43,29 @@ input[type=number] {
   -moz-appearance: textfield;
 }
 
-button:hover {
+.btn-primary:hover {
     opacity: .5;
     cursor: pointer;
 }
 
-button:active {
+.btn-primary:active {
     opacity: .3;
 }
+
+.btn-top-next {
+    align-items: center;
+    display: flex;
+    position: absolute;
+    right: 30px;
+    text-align: center;
+    top: 20px;
+}
+
+.btn-top-next svg {
+    margin-left: 7px;
+}
+
+/* Components - hr */
 
 hr {
     border: 0px;
@@ -54,6 +73,8 @@ hr {
     margin: 10px 0px;
     text-decoration: none;
 }
+
+/* ------ App ------ */
 
 .App {
     align-content: stretch;
@@ -64,6 +85,8 @@ hr {
     height: 100vh;
     justify-content: center;
 }
+
+/* ------ Content ------ */
 
 .title {
     color: var(--color-black);
@@ -79,18 +102,20 @@ hr {
     width: 100%;
 }
 
-.buttons-container button:first-child {
+.buttons-container .btn-primary:first-child {
     margin-left: 0px;
 }
 
-.buttons-container button {
+.buttons-container .btn-primary {
     margin-left: 40px;
 }
 
 .custom-container input,
-.custom-container button {
+.custom-container .btn-primary {
     margin-left: 20px;
 }
+
+/* ------ Footer ------ */
 
 .footer {
     bottom: 15px;
