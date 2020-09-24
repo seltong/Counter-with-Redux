@@ -1,12 +1,7 @@
-function add(value, array) {
-    array.push(value);
-    return array;
-}
-
-const todoReducer = (state = [''], action) => {
+const todoReducer = (state = [], action) => {
     switch (action.type) {
         case 'ADDTODO':
-            return add(action.payload, state)
+            return [ ...state, action.payload];
         default:
             return state
     }

@@ -2,13 +2,25 @@
     width: 100%;
 }
 
+.empty-div {
+    padding: 20px;
+}
+
+.todo-content {
+    text-align: center;
+}
+
+.todo-content h2 {
+    margin-bottom: 10px;
+}
+
 .todo-list {
     border: 1px solid var(--color-primary);
     border-radius: 4px;
     list-style: none;
     max-height: 400px;
     overflow: auto;
-    text-align: center;
+    text-align: left;
     width: 100%;
 }
 
@@ -24,4 +36,17 @@
 
 .todo-list .todo-item:hover .checkbox svg path {
     color: var(--color-secondary);
+}
+
+.todo-add {
+    display: flex;
+    margin-top: 20px;
+}
+
+.todo-add input{
+    margin-right: 10px;
+}
+
+.todo-add input {
+    width: 100%;
 }

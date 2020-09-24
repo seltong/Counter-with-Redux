@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { useSelector, useDispatch } from 'react-redux';
 import { Checkbox } from '@material-ui/core';
-import { AiOutlineArrowLeft, AiOutlineArrowRight, AiOutlinePlus } from 'react-icons/ai';
+import { AiOutlineArrowLeft, AiOutlineArrowRight } from 'react-icons/ai';
 import { addTodo } from '../actions';
 import '../style/todo.css';
 
@@ -35,20 +35,20 @@ function Todo() {
                     <h2>To Do</h2>
                     <ul className="todo-list" >
                         {
-                            todos.map((todo) => {
+                            todos.map((todo, index) => {
                                 return (
-                                    <li className="todo-item">
+                                    <li key={index} className="todo-item">
                                         <Checkbox className="checkbox" /> {todo}
                                     </li>
                                 );
                             })
                         }
                     </ul>
-                    <div>
+                    <div className="todo-add">
                         <input type="text" id="inptAddTodo" />
                         <button className="btn-primary"
                             onClick={() => { dispatch(addTodo(document.querySelector('#inptAddTodo').value)) }}>
-                            <AiOutlinePlus />
+                            +
                         </button>
                     </div>
                 </div>
