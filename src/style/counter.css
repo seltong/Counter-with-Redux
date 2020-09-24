@@ -1,0 +1,28 @@
+/* ------ Content ------ */
+
+.title {
+    color: var(--color-black);
+    font-size: 70px;
+}
+
+.buttons-container,
+.custom-container {
+    align-items: center;
+    display: flex;
+    flex-flow: row;
+    justify-content: center;
+    width: 100%;
+}
+
+.buttons-container .btn-primary:first-child {
+    margin-left: 0px;
+}
+
+.buttons-container .btn-primary {
+    margin-left: 40px;
+}
+
+.custom-container input,
+.custom-container .btn-primary {
+    margin-left: 20px;
+}

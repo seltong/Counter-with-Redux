@@ -11,3 +11,10 @@ export const decrement = (nr) => {
         payload: nr
     };
 };
+
+export const addTodo = (value) => {
+    return {
+        type: 'ADDTODO',
+        payload: value
+    };
+};

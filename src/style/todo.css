@@ -1,0 +1,27 @@
+.main-todo {
+    width: 100%;
+}
+
+.todo-list {
+    border: 1px solid var(--color-primary);
+    border-radius: 4px;
+    list-style: none;
+    max-height: 400px;
+    overflow: auto;
+    text-align: center;
+    width: 100%;
+}
+
+.todo-list li.todo-item{
+    padding: 10px 16px;
+    transition: background-color .2s, color 0.4s;
+}
+
+.todo-list .todo-item:hover {
+    background-color: var(--color-primary);
+    color: var(--color-secondary);
+}
+
+.todo-list .todo-item:hover .checkbox svg path {
+    color: var(--color-secondary);
+}
