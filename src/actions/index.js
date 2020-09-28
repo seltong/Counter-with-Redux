@@ -12,9 +12,23 @@ export const decrement = (nr) => {
     };
 };
 
-export const addTodo = (value) => {
+export const addTodo = (id, label, list) => {
     return {
-        type: 'ADDTODO',
-        payload: value
+        type: 'ADD_TODO',
+        payload: { id, label, list }
+    };
+};
+
+export const removeTodo = (id) => {
+    return {
+        type: 'REMOVE_TODO',
+        payload: { id }
+    };
+};
+
+export const moveTodo = (listInputs, finalList) => {
+    return {
+        type: 'MOVE_TODO',
+        payload: { listInputs, finalList }
     };
 };

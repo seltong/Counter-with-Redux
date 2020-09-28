@@ -1,4 +1,19 @@
+.App {
+    flex-flow: row;
+}
+
+.main {
+    width: 100%;
+}
+
+.main .title {
+    margin-bottom: 100px;
+    text-align: center;
+}
+
 .main-todo {
+    display: flex;
+    flex-flow: row nowrap;
     width: 100%;
 }
 
@@ -6,17 +21,32 @@
     padding: 20px;
 }
 
+.todo-actions {
+    display: flex;
+    flex-flow: column;
+    justify-content: center;
+}
+
+.todo-actions .btn-action {
+    border: 0;
+    font-size: 40px;
+    margin: 20px 0px;
+    padding: 0px;
+} 
+
 .todo-content {
+    margin: 0px auto;
     text-align: center;
 }
 
 .todo-content h2 {
-    margin-bottom: 10px;
+    margin-bottom: 20px;
 }
 
 .todo-list {
-    border: 1px solid var(--color-primary);
+    border: 2px solid var(--color-primary);
     border-radius: 4px;
+    height: 400px;
     list-style: none;
     max-height: 400px;
     overflow: auto;
@@ -24,9 +54,21 @@
     width: 100%;
 }
 
-.todo-list li.todo-item{
+.todo-list li.todo-item {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
     padding: 10px 16px;
     transition: background-color .2s, color 0.4s;
+}
+
+.todo-list li.todo-item div {
+    max-width: 300px;
+    width: 100%;
+}
+
+.todo-list li.todo-item:hover div {
+    color: var(--color-secondary);
 }
 
 .todo-list .todo-item:hover {
@@ -35,6 +77,10 @@
 }
 
 .todo-list .todo-item:hover .checkbox svg path {
+    color: var(--color-secondary);
+}
+
+.todo-list .todo-item:hover .remove path {
     color: var(--color-secondary);
 }
 

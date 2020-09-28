@@ -1,9 +1,12 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { useSelector, useDispatch } from 'react-redux';
-import { Checkbox } from '@material-ui/core';
-import { AiOutlineArrowLeft, AiOutlineArrowRight } from 'react-icons/ai';
-import { addTodo } from '../actions';
+import TodoContent from '../components/TodoContent';
+import { moveTodo } from '../actions';
+import {
+    AiOutlineArrowLeft, AiOutlineArrowRight,
+    AiOutlineLeftCircle, AiOutlineRightCircle
+} from 'react-icons/ai';
 import '../style/todo.css';
 
 function Todo() {
@@ -11,7 +14,7 @@ function Todo() {
     const dispatch = useDispatch();
 
     return (
-        <div className="App" >
+        <div className="main" >
             <div>
                 <Link to="/" >
                     <button className="btn-primary btn-top-prev">
@@ -31,31 +34,33 @@ function Todo() {
             </div>
 
             <div className="main-todo" >
-                <div className="todo-content">
-                    <h2>To Do</h2>
-                    <ul className="todo-list" >
-                        {
-                            todos.map((todo, index) => {
-                                return (
-                                    <li key={index} className="todo-item">
-                                        <Checkbox className="checkbox" /> {todo}
-                                    </li>
-                                );
-                            })
-                        }
-                    </ul>
-                    <div className="todo-add">
-                        <input type="text" id="inptAddTodo" />
-                        <button className="btn-primary"
-                            onClick={() => { dispatch(addTodo(document.querySelector('#inptAddTodo').value)) }}>
-                            +
-                        </button>
-                    </div>
+                <TodoContent title="To Do" todos={todos}
+                    dispatch={dispatch} list="todo" inputId="inptAddTodo" />
+
+                <div className="todo-actions">
+                    <AiOutlineRightCircle className="btn-primary btn-action"
+                        onClick={() => dispatch(moveTodo(document.querySelectorAll("#todo li > .Mui-checked input"), 'doing'))} />
+                    <AiOutlineLeftCircle className="btn-primary btn-action"
+                        onClick={() => dispatch(moveTodo(document.querySelectorAll("#doing li > .Mui-checked input"), 'todo'))} />
                 </div>
+
+                <TodoContent title="Doing" todos={todos} dispatch={dispatch}
+                    list="doing" inputId="inptAddDoing" />
+
+                <div className="todo-actions">
+                    <AiOutlineRightCircle className="btn-primary btn-action"
+                        onClick={() => dispatch(moveTodo(document.querySelectorAll("#doing li > .Mui-checked input"), 'done'))} />
+                    <AiOutlineLeftCircle className="btn-primary btn-action"
+                        onClick={() => dispatch(moveTodo(document.querySelectorAll("#done li > .Mui-checked input"), 'doing'))} />
+                </div>
+
+                <TodoContent title="Done" todos={todos} dispatch={dispatch}
+                    list="done" inputId="inptAddDone" />
+
             </div>
 
             <footer className="footer" >
-                <span > &copy; By Selton Guedes 2020 </span>
+                <span> &copy; By Selton Guedes 2020 </span>
             </footer>
         </div>
     );
