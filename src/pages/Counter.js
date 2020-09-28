@@ -3,6 +3,7 @@ import { useSelector, useDispatch } from 'react-redux';
 import { increment, decrement } from '../actions';
 import { AiOutlineArrowRight } from 'react-icons/ai';
 import { Link } from 'react-router-dom';
+import Footer from '../components/Footer';
 import '../style/counter.css';
 
 function getValueOfElementById(id) {
@@ -44,9 +45,7 @@ function Counter() {
 
             { isLogged ? <h3>Valuable Information I shouldn't see</h3> : ''}
 
-            <footer className="footer">
-                <span>&copy; By Selton Guedes 2020</span>
-            </footer>
+            <Footer />
         </div>
     );
 }

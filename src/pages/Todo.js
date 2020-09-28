@@ -1,12 +1,23 @@
 import React from 'react';
+
+// Router
 import { Link } from 'react-router-dom';
-import { useSelector, useDispatch } from 'react-redux';
+
+// My components
 import TodoContent from '../components/TodoContent';
+import Footer from '../components/Footer';
+
+// Redux
+import { useSelector, useDispatch } from 'react-redux';
 import { moveTodo } from '../actions';
+
+// React-icons
 import {
     AiOutlineArrowLeft, AiOutlineArrowRight,
     AiOutlineLeftCircle, AiOutlineRightCircle
 } from 'react-icons/ai';
+
+// CSS
 import '../style/todo.css';
 
 function Todo() {
@@ -59,9 +70,7 @@ function Todo() {
 
             </div>
 
-            <footer className="footer" >
-                <span> &copy; By Selton Guedes 2020 </span>
-            </footer>
+            <Footer />
         </div>
     );
 }

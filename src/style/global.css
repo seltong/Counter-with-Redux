@@ -102,8 +102,29 @@ hr {
 
 .footer {
     bottom: 15px;
+    display: flex;
     font-size: 15px;
+    justify-content: center;
     position: absolute;
     text-align: center;
+    width: 100%;
+}
+
+.footer a {
+    text-decoration: none;
+}
+
+.footer div {
+    border-top: 1px solid transparent;
+    display: flex;
+    float: center;
+    text-decoration: none;
+    transition: all ease-in-out .7s;
+    height: 2px;
+    width: 0px;
+}
+
+.footer span:hover div {
+    border-color: var(--color-primary);
     width: 100%;
 }
