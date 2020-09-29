@@ -101,10 +101,11 @@ hr {
 /* ------ Footer ------ */
 
 .footer {
-    bottom: 15px;
+    bottom: 10px;
     display: flex;
     font-size: 15px;
     justify-content: center;
+    margin-top: 15px;
     position: absolute;
     text-align: center;
     width: 100%;

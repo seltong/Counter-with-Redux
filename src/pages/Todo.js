@@ -33,7 +33,7 @@ function Todo() {
                     </button>
                 </Link>
 
-                <Link to="/">
+                <Link to="/movies">
                     <button className="btn-primary btn-top-next" >
                         Next < AiOutlineArrowRight />
                     </button>

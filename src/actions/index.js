@@ -32,3 +32,10 @@ export const moveTodo = (listInputs, finalList) => {
         payload: { listInputs, finalList }
     };
 };
+
+export const listMovies = (list) => {
+    return {
+        type: 'LIST_MOVIES',
+        payload: { list }
+    };
+};

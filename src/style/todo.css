@@ -7,7 +7,7 @@
 }
 
 .main .title {
-    margin-bottom: 100px;
+    margin-bottom: 7vh;
     text-align: center;
 }
 
@@ -46,12 +46,11 @@
 .todo-list {
     border: 2px solid var(--color-primary);
     border-radius: 4px;
-    height: 400px;
+    height: 40vh;
     list-style: none;
-    max-height: 400px;
     overflow: auto;
     text-align: left;
-    width: 100%;
+    width: 25vw;
 }
 
 .todo-list li.todo-item {
@@ -63,7 +62,7 @@
 }
 
 .todo-list li.todo-item div {
-    max-width: 300px;
+    max-width: 20vw;
     width: 100%;
 }
 
