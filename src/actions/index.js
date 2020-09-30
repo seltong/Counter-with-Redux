@@ -1,3 +1,5 @@
+
+
 export const increment = (nr) => {
     return {
         type: 'INCREMENT',
@@ -33,9 +35,16 @@ export const moveTodo = (listInputs, finalList) => {
     };
 };
 
-export const listMovies = (list) => {
+export const listMovies = (listMovies) => {
     return {
         type: 'LIST_MOVIES',
-        payload: { list }
+        payload: { listMovies }
     };
 };
+
+export const searchMovie = (search, dispatch) => {
+    return {
+        type: 'SEARCH_MOVIE',
+        payload: { search, dispatch }
+    }
+}

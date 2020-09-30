@@ -1,7 +1,4 @@
-import React from 'react';
-
-// Axios
-import api from '../api';
+import React, { useState } from 'react';
 
 // Router
 import { Link } from 'react-router-dom';
@@ -11,7 +8,7 @@ import Footer from '../components/Footer';
 
 // Redux
 import { useSelector, useDispatch } from 'react-redux';
-import { listMovies } from '../actions';
+import { searchMovie } from '../actions';
 
 // React-icons
 import {
@@ -20,6 +17,7 @@ import {
 
 function Movies() {
     const movies = useSelector(state => state.movies);
+    const [inputValue, setInputValue] = useState('');
     const dispatch = useDispatch();
 
     return (
@@ -39,15 +37,14 @@ function Movies() {
             </div>
 
             <div className="title">
-                <h1>Movies List</h1>
+                <h1>List of Movies</h1>
             </div>
             <div>
-                <input id="inptSearchMovie" />
+                <input id="inptSearchMovie" onChange={(event) => setInputValue(event.target.value)} />
                 <button className="btn-primary"
-                    onClick={() => api.get(document.querySelector('#inptSearchMovie').value)
-                                    .then(res => dispatch(listMovies(res.data)))}>
+                    onClick={() => dispatch(searchMovie(inputValue, dispatch))}>
                     Search movies
-                        </button>
+                </button>
                 {
                     movies.map(movie => {
                         return (
